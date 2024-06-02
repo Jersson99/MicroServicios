@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autogestión de Tareas</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <h1>Autogestión de Tareas</h1>
+    <form id="tareaForm">
+        <input type="text" name="titulo" placeholder="Título" required>
+        <textarea name="descripcion" placeholder="Descripción" required></textarea>
+        <input type="date" name="fechaEstimadaFinalizacion" required>
+        <select name="idEmpleado" required>
+            <option value="1">Juan Carlos Gomez</option>
+            <option value="2">Ana María Blanco</option>
+            <option value="3">Juan Fernando Perez</option>
+            <option value="4">Angela Díaz</option>
+        </select>
+        <select name="idEstado" required>
+            <option value="1">Pendiente</option>
+            <option value="2">En proceso</option>
+            <option value="3">Terminada</option>
+            <option value="4">En impedimento</option>
+        </select>
+        <select name="idPrioridad" required>
+            <option value="1">Alta</option>
+            <option value="2">Media</option>
+            <option value="3">Baja</option>
+        </select>
+        <textarea name="observaciones" placeholder="Observaciones"></textarea>
+        <button type="submit">Guardar</button>
+    </form>
+    <h2>Listado de Tareas</h2>
+    <div id="tareasContainer">
+    </div>
+    <script src="JS/main.js"></script>
+</body>
+</html>

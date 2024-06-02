@@ -8,11 +8,6 @@ class Tarea extends Model
 {
     protected $table = 'tareas';
 
-    protected $fillable = [
-        'titulo', 'descripcion', 'fechaEstimadaFinalizacion', 'fechaFinalizacion',
-        'creadorTarea', 'observaciones', 'idEmpleado', 'idEstado', 'idPrioridad'
-    ];
-
     public function empleado()
     {
         return $this->belongsTo(Empleado::class, 'idEmpleado');
