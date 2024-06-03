@@ -12,7 +12,12 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstadoController;
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+Route::get('/estado', [EstadoController::class, 'index']);

@@ -90,4 +90,24 @@ class TareaController extends Controller
         $tarea->update(['observaciones' => $request->observaciones]);
         return response()->json($tarea, 200);
     }
+
+    public function getTasksByStatus()
+{
+    $tareas = Tarea::all()->groupBy('estados');
+
+    return view('tareas.byStatus', compact('tareas'));
+}
+public function updateStatus(Request $request, $idEstado)
+{
+    $tarea = tarea::find($idEstado);
+    if (!$tarea) {
+        return response()->json(['success' => false, 'message' => 'Tarea no encontrada'], 404);
+    }
+
+    $tarea->estado = $request->input('estado');
+    $tarea->save();
+
+    return response()->json(['success' => true, 'message' => 'Estado actualizado']);
+}
+
 }
